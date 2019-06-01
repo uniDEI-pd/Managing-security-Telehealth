@@ -1,0 +1,56 @@
+<head>
+
+  <script src="https://npmcdn.com/parse@1.10.0/dist/parse.min.js"></script>
+  <link href="assets/favicon.png" rel="shortcut icon">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+  <div>
+
+    <header>
+      <img src="assets/page-header.png" />
+    </header>
+    <a href="index.html" class="btn btn-default">home</a>
+    <br>
+    <div class="container">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#myapp" id="okDoctor">Patients Edit</button>
+      <div id="myapp" class="panel-collapse collapse in" >
+        <h2>Registering Patients</h2>
+        <h3>Choose the action you want</h3>
+        <button type="button" name="create" id="create">Create</button>
+        <button type="button" name="read" id="read">Read</button>
+        <button type="button" name="update" id="update"disabled>Update</button>
+        <button type="button" name="delete" id="delete"disabled>Delete</button>
+        <br>
+        <br>
+        <br>
+        <div id="form">
+          <form id="form_patients" class="">
+            <fieldset form="form_patients">
+              <legend id="form_title">Create New Patient</legend>
+              Name: <input type="text" id="input_name" name="input_name" placeholder="Name" size="40"><br>
+              Gender: <input type="text" id="input_gender" name="input_gender" placeholder="Gender" size="40"><br>
+              Date of Birth: <input type="text" id="input_birth" name="input_birth" placeholder="Date of Birth" size="10"><br>
+              Phone: <input type="text" id="input_phone" name="input_phone" placeholder="Phone" size="40"><br>
+              Address: <input type="text" id="input_address" name="input_address" placeholder="Address" size="40"><br><br>
+              <input type="button" name="save" id="submit" value="Save">
+            </fieldset>
+          </form>
+          <p id="message"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your JS script -->
+  <script src="scripts/interactiveness.js"></script>
+  <script src="scripts/CRUD.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
