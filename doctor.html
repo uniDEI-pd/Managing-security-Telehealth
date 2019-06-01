@@ -15,14 +15,18 @@
     <a href="index.html" class="btn btn-default">home</a>
     <br>
     <div class="container">
-    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#myapp" id="okDoctor">Patients Edit</button>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#myapp" id="okDoctor">Patients Edit</button>
       <div id="myapp" class="panel-collapse collapse in" >
-        <h2>Registering Patients</h2>
-        <h3>Choose the action you want</h3>
-        <button type="button" name="create" id="create">Create</button>
-        <button type="button" name="read" id="read">Read</button>
-        <button type="button" name="update" id="update"disabled>Update</button>
-        <button type="button" name="delete" id="delete"disabled>Delete</button>
+        <h2><p class="text-primary">Registering Patients</p></h2>
+        <h3><p class="text-primary">Choose the action you want:</p></h3>
+        <button type="button" name="create" id="create">
+          <span class="glyphicon glyphicon-edit"></span> Create</button>
+        <button type="button" name="read" id="read">
+          <span class="glyphicon glyphicon-list-alt"></span> Read</button>
+        <button type="button" name="update" id="update"disabled>
+          <span class="glyphicon glyphicon-cloud-upload"></span> Update</button>
+        <button type="button" name="delete" id="delete"disabled>
+          <span class="glyphicon glyphicon-trash"></span> Delete</button>
         <br>
         <br>
         <br>
@@ -34,7 +38,8 @@
               Gender: <input type="text" id="input_gender" name="input_gender" placeholder="Gender" size="40"><br>
               Date of Birth: <input type="text" id="input_birth" name="input_birth" placeholder="Date of Birth" size="10"><br>
               Phone: <input type="text" id="input_phone" name="input_phone" placeholder="Phone" size="40"><br>
-              Address: <input type="text" id="input_address" name="input_address" placeholder="Address" size="40"><br><br>
+              Address: <input type="text" id="input_address" name="input_address" placeholder="Address" size="40"><br>
+              In: <input type="text" id="input_address" name="input_address" placeholder="Address" size="40"><br><br>
               <input type="button" name="save" id="submit" value="Save">
             </fieldset>
           </form>
