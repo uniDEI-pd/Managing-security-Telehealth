@@ -1,11 +1,11 @@
 <head>
-
+  <script src="scripts/getPatientList.js"></script>
   <script src="https://npmcdn.com/parse@1.10.0/dist/parse.min.js"></script>
   <link href="assets/favicon.png" rel="shortcut icon">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 
-<body>
+
 
   <div>
 
@@ -16,7 +16,7 @@
     <br>
     <div class="container">
     <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#myapp" id="okDoctor">Patients Edit</button>
-      <div id="myapp" class="panel-collapse collapse in" >
+      <div id="myapp" class="panel-collapse collapse" >
         <h2><p class="text-primary">Registering Patients</p></h2>
         <h3><p class="text-primary">Choose the action you want:</p></h3>
         <button type="button" name="create" id="create">
@@ -35,11 +35,12 @@
             <fieldset form="form_patients">
               <legend id="form_title">Create New Patient</legend>
               Name: <input type="text" id="input_name" name="input_name" placeholder="Name" size="40"><br>
-              Gender: <input type="text" id="input_gender" name="input_gender" placeholder="Gender" size="40"><br>
-              Date of Birth: <input type="text" id="input_birth" name="input_birth" placeholder="Date of Birth" size="10"><br>
-              Phone: <input type="text" id="input_phone" name="input_phone" placeholder="Phone" size="40"><br>
+              Gender: <input type="text" id="input_gender" name="input_gender" placeholder="Gender" size="20"> M / F / OTHER<br>
+              Date of Birth: <input type="date" id="input_birth" name="input_birth" placeholder="Date of Birth" size="10"><br>
+              Phone: <input type="tel" id="input_phone" name="input_phone" placeholder="Phone" size="20"><br>
               Address: <input type="text" id="input_address" name="input_address" placeholder="Address" size="40"><br>
-              In: <input type="text" id="input_address" name="input_address" placeholder="Address" size="40"><br><br>
+              Password: <input type="password" id="input_password" name="input_password" placeholder="Password" size="40"><br>
+              TextArea: <input type="text" id="input_textarea" name="input_textarea" placeholder="TextArea" size="40"><br><br>
               <input type="button" name="save" id="submit" value="Save">
             </fieldset>
           </form>
@@ -48,7 +49,26 @@
       </div>
     </div>
   </div>
+  <button type="button" class="btn btn-primary"  id="seePatient" onclick="getPatientList()">Patients Refresh</button>
 
+<body>
+
+  <div class="table-responsive">
+      <table class="table">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Date of Birth</th>
+          </tr>
+      </thead>
+      <tbody id="todos-list">
+
+      </tbody>
+  </table>
+  </div>
+
+</body>
   <!-- Your JS script -->
   <script src="scripts/interactiveness.js"></script>
   <script src="scripts/CRUD.js"></script>
