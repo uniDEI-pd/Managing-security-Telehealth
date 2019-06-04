@@ -10,7 +10,7 @@ The project is also on the Plunker platform, but it does not seem to be very sta
 ## How-to
 1) Only the doctor can create/update/delete new patients, once authenticated. Patients can only have access to their personal page.
 2) Before updating/deleting a patient, you have to first search that patient with the "Read" button. Once the patient is successfully loaded it is possible to update his/her data or delete him/her from the database.
-3) For testing the app:
+3) For testing the app:<br>
 List of already registered doctors with passwords:
     - NAME: Derek Shepherd   PASSWORD: derek
     - NAME: Cristina Yang    PASSWORD: cristina
