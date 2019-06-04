@@ -21,11 +21,5 @@ The project is also on the Plunker platform, but it does not seem to be very sta
 - If you manage to open the <em>patient.html</em> page without passing through the login screen, you are able to see the last patient who logged in data.
 
 ## Contributing
-UNIPD
-
-Giulia Bressan, ID
-
-Melchiori Riccardo, ID 
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+Giulia Bressan,
+Melchiori Riccardo,
