@@ -13,9 +13,15 @@ function login() {
     queryPatient = new Parse.Query(Patient);
     queryPatient.equalTo("name", textName);
     queryPatient.first().then(function(patient){
-       if(patient && patient.get("name") == textName && patient.get("gender") == textPass)
+       if(patient && patient.get("name") == textName && patient.get("password") == textPass)
        {
           alert('patient');
+          localStorage.setItem('PatientToShowName', patient.get("name"));
+          localStorage.setItem('PatientToShowGender', patient.get("gender"));
+          localStorage.setItem('PatientToShowBirth', patient.get("birth"));
+          localStorage.setItem('PatientToShowPhone', patient.get("phone"));
+          localStorage.setItem('PatientToShowAddress', patient.get("address"));
+          localStorage.setItem('PatientToShowTextarea', patient.get("textarea"));
           window.location='patient.html';
        }
        else {

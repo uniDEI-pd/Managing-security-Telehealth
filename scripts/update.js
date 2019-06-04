@@ -10,6 +10,8 @@ var textGender = "myGender";
 var textBirth = 761996;
 var textPhone = 123456;
 var textAddress = "myAddress";
+var textPassword = "myPassword";
+var textTextArea = "myTextArea";
 
 readThenUpdate();
 
@@ -37,6 +39,8 @@ function update(foundPatient) {
     foundPatient.set("birth", textBirth);
     foundPatient.set("phone", textPhone);
     foundPatient.set("address", textAddress);
+    foundPatient.set("password", textPassword);
+    foundPatient.set("textarea", textTextArea);
 
     foundPatient.save(null, {
         success: function (patient) {

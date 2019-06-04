@@ -28,6 +28,10 @@ function createPatient() {
         alert("Please type a phone number");
     } else if(textAddress === null || textAddress === "") {
         alert("Please type an address");
+    } else if(textPassword === null || textPassword === "") {
+        alert("Please type a password");
+    } else if(textTextArea === null || textTextArea === "") {
+        alert("Please type a comment");
     } else {
         mypatient = new Patient();
         mypatient.set("name", textName);
@@ -35,6 +39,8 @@ function createPatient() {
         mypatient.set("birth", textBirth);
         mypatient.set("phone", textPhone);
         mypatient.set("address", textAddress);
+        mypatient.set("password", textPassword);
+        mypatient.set("textarea", textTextArea);
 
         mypatient.save(null, {
             success: function (mypatient) {
@@ -43,8 +49,15 @@ function createPatient() {
                 inputBirth.value = null;
                 inputPhone.value = null;
                 inputAddress.value = null;
-                textMessage.innerHTML = 'Patient created with name: ' + mypatient.get("name") + ' and date of birth: ' + mypatient.get("birth");
-                alert('Patient created with success!');
+                inputPassword.value = null;
+                inputTextArea.value = null;
+                textMessage.innerHTML = 'Patient created!' + "<br />" +
+                                        'Name: ' + mypatient.get("name") + "<br />" +
+                                        'Gender: ' + mypatient.get("gender") + "<br />" +
+                                        'Date of birth: ' + mypatient.get("birth") + "<br />" +
+                                        'Phone: ' + mypatient.get("phone") + "<br />" +
+                                        'Address: ' + mypatient.get("address") + "<br />" +
+                                        'Comments: ' + mypatient.get("textarea");
             },
             error: function (response, error) {
                 textMessage.innerHTML = error.message;
@@ -66,8 +79,12 @@ function readPatient() {
             success: function(mypatient) {
                 if (mypatient) {
                     findPatient = mypatient;
-                    textMessage.innerHTML = 'Patient name: ' + mypatient.get("name") + ' and date of birth: ' +
-                    mypatient.get("birth");
+                    textMessage.innerHTML = 'Patient name: ' + mypatient.get("name") + "<br />" +
+                                            'Gender: ' + mypatient.get("gender") + "<br />" +
+                                            'Date of birth: ' + mypatient.get("birth") + "<br />" +
+                                            'Phone: ' + mypatient.get("phone") + "<br />" +
+                                            'Address: ' + mypatient.get("address") + "<br />" +
+                                            'Comments: ' + mypatient.get("textarea");
                     updatePatientBtn.disabled = false;
                     deletePatientBtn.disabled = false;
                     inputName.value = null;
@@ -75,6 +92,8 @@ function readPatient() {
                     inputBirth.value = null;
                     inputPhone.value = null;
                     inputAddress.value = null;
+                    inputPassword.value = null;
+                    inputTextArea.value = null;
                 } else {
                     alert("Nothing found, please try again");
                 }
@@ -97,18 +116,27 @@ function updatePatient() {
       alert("Please type a phone number");
   } else if(textAddress === null || textAddress === "") {
       alert("Please type an address");
+  } else if(textPassword === null || textPassword === "") {
+      alert("Please type a password");
+  } else if(textTextArea === null || textTextArea === "") {
+      alert("Please type a comment");
   } else {
         findPatient.set('name', textName);
         findPatient.set("gender", textGender);
         findPatient.set("birth", textBirth);
         findPatient.set("phone", textPhone);
         findPatient.set("address", textAddress);
+        findPatient.set("password", textPassword);
+        findPatient.set("textarea", textTextArea);
         findPatient.save(null, {
             success: function (response) {
                 alert('Patient updated with objectId: ' + response.id);
-                textMessage.innerHTML = 'Patient name: ' + response.get("name") + ', gender: ' +
-                  response.get("gender") + ', date of birth: ' + response.get("birth") + ', phone: ' +
-                   response.get("phone") + ', address: ' + response.get("address");
+                textMessage.innerHTML = 'Patient name: ' + mypatient.get("name") + "<br />" +
+                                        'Gender: ' + mypatient.get("gender") + "<br />" +
+                                        'Date of birth: ' + mypatient.get("birth") + "<br />" +
+                                        'Phone: ' + mypatient.get("phone") + "<br />" +
+                                        'Address: ' + mypatient.get("address") + "<br />" +
+                                        'Comments: ' + mypatient.get("textarea");
 
             },
             error: function (response, error) {
@@ -128,12 +156,16 @@ function deletePatient() {
             textBirth = null;
             textPhone = null;
             textAddress = null;
+            textPassword = null;
+            textTextArea = null;
             textMessage = null;
             inputName.value = null;
             inputGender.value = null;
             inputBirth.value = null;
             inputPhone.value = null;
             inputAddress.value = null;
+            inputPassword.value = null;
+            inputTextArea.value = null;
             updatePatientBtn.disabled = true;
             deletePatientBtn.disabled = true;
             readBtn();

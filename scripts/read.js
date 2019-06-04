@@ -10,6 +10,8 @@ var textGender = "myGender";
 var textBirth = 761996;
 var textPhone = 123456;
 var textAddress = "myAddress";
+var textPassword = "myPassword";
+var textTextArea = "myTextArea";
 
 read();
 

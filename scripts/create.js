@@ -10,6 +10,8 @@ var textGender = "myGender";
 var textBirth = 761996;
 var textPhone = 123456;
 var textAddress = "myAddress";
+var textPassword = "myPassword";
+var textTextArea = "myTextArea";
 
 create();
 
@@ -20,6 +22,8 @@ function create() {
     mypatient.set("birth", textBirth);
     mypatient.set("phone", textPhone);
     mypatient.set("address", textAddress);
+    mypatient.set("password", textPassword);
+    mypatient.set("textarea", textTextArea);
 
     mypatient.save(null, {
         success: function (patient) {

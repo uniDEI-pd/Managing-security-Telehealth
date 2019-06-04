@@ -1,4 +1,4 @@
-var mypatient, textName, textGender, textBirth, textPhone, textAddress, textMessage, query, findPatient;
+var mypatient, textName, textGender, textBirth, textPhone, textAddress, textPassword, textTextArea, textMessage, query, findPatient;
 
 //buttons and form
 var createPatientBtn = document.getElementById("create");
@@ -22,6 +22,8 @@ function createBtn () {
   input_birth.disabled = false;
   input_phone.disabled = false;
   input_address.disabled = false;
+  input_password.disabled = false;
+  input_textarea.disabled = false;
   updatePatientBtn.disabled = true;
   deletePatientBtn.disabled = true;
 }
@@ -39,6 +41,10 @@ function readBtn () {
   input_phone.disabled = true;
   input_address.value = null;
   input_address.disabled = true;
+  input_password.value = null;
+  input_password.disabled = true;
+  input_textarea.value = null;
+  input_textarea.disabled = true;
   // updatePatient.disabled = true;
   // deletePatient.disabled = true;
   submitPatientBtn.value = "Search";
@@ -54,6 +60,8 @@ function updateBtn () {
   input_birth.disabled = false;
   input_phone.disabled = false;
   input_address.disabled = false;
+  input_password.disabled = false;
+  input_textarea.disabled = false;
   updatePatientBtn.disabled = false;
   deletePatientBtn.disabled = false;
   inputName.value = findPatient.get("name");
@@ -61,6 +69,8 @@ function updateBtn () {
   inputBirth.value = findPatient.get("birth");
   inputPhone.value = findPatient.get("phone");
   inputAddress.value = findPatient.get("address");
+  inputPassword.value = findPatient.get("password");
+  inputTextArea.value = findPatient.get("textarea");
 }
 
 function deleteBtn () {
@@ -78,6 +88,10 @@ function deleteBtn () {
   input_phone.disabled = true;
   inputAddress.value = findPatient.get("address");
   input_address.disabled = true;
+  inputPassword.value = findPatient.get("password");
+  input_password.disabled = true;
+  inputTextArea.value = findPatient.get("textarea");
+  input_textarea.disabled = true;
 }
 
 function getElements () {
@@ -86,10 +100,14 @@ function getElements () {
     inputBirth = document.getElementById("input_birth");
     inputPhone = document.getElementById("input_phone");
     inputAddress = document.getElementById("input_address");
+    inputPassword = document.getElementById("input_password");
+    inputTextArea = document.getElementById("input_textarea");
     textName = document.getElementById("input_name").value;
     textGender = document.getElementById("input_gender").value;
     textBirth = document.getElementById("input_birth").value;
     textPhone = document.getElementById("input_phone").value;
     textAddress = document.getElementById("input_address").value;
+    textPassword = document.getElementById("input_password").value;
+    textTextArea = document.getElementById("input_textarea").value;
     textMessage = document.getElementById("message");
 }
